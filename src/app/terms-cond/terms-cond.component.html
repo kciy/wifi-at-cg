@@ -1,0 +1,53 @@
+<style type="text/css">
+  input[type="checkbox"]:required:invalid + label::before {
+    color: red;
+  }
+  input[type="checkbox"]:required:valid + label::before {
+    color: green;
+  }
+</style>
+<div class="m-auto w-full mb-3">
+  <label for="terms">
+    <input
+      class="mr-1 focus:ring-transparent text-black"
+      type="checkbox"
+      name="terms"
+      id="terms"
+      required
+    />
+    <span class="text-db-red">*</span> I hereby consent to the
+  </label>
+  <span class="underline hover:cursor-pointer" (click)="toggleModal()"
+    >terms and conditioners</span
+  >
+  and that I owe the owner of this website one beer per day.
+</div>
+<div
+  *ngIf="showModal"
+  class="fixed top-20 md:left-40 md:right-40 left-5 right-5 z-50 m-auto outline-none focus:outline-none justify-center items-center flex"
+>
+  <div class="bg-white bg-opacity-95 p-7 shadow-xl w-full">
+    <p
+      class="font-bold hover:cursor-pointer absolute p-4 right-5 top-3"
+      (click)="toggleModal()"
+    >
+      <img src="../../assets/fonts/close.png" />
+    </p>
+    <h2 class="font-bold text-xl mb-2">Terms and Conditioners</h2>
+    <div>Wer liest sowas ernsthaft?</div>
+    <iframe
+      class="mt-2"
+      src="https://www.youtube.com/embed/-RFFfjeQKkI"
+      title=""
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    <div
+      (click)="toggleModal()"
+      class="hover:cursor-pointer my-4 inline-block border-black border-2 px-2 py-2 text-center"
+    >
+      Schließen
+    </div>
+  </div>
+</div>
